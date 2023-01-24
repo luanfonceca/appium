@@ -86,9 +86,10 @@ const fs = {
    * Remove a directory and all its contents, recursively
    * @todo Replace with `rm()` from `fs.promises` when Node.js v12 support is dropped.
    */
-  rimraf: /** @type {(dirpath: string, opts?: import('rimraf').Options) => Promise<void>} */ (
-    B.promisify(rimrafIdx)
-  ),
+  rimraf:
+    /** @type {(dirpath: string, opts?: import('rimraf/dist/cjs/src').RimrafOptions) => Promise<void>} */ (
+      B.promisify(rimrafIdx)
+    ),
 
   /**
    * Alias of {@linkcode rimrafIdx.sync}
